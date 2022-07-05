@@ -110,6 +110,6 @@ namespace Fractals
         /// Возвращает название фрактала.
         /// </summary>
         /// <returns>Название фрактала.</returns>
-        public override string ToString() => "Канторово множество";
+        public override string Name => "Канторово множество";
     }
 }

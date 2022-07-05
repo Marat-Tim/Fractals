@@ -163,7 +163,7 @@ namespace Fractals
                 BitmapEncoder pngEncoder = new PngBitmapEncoder();
                 pngEncoder.Frames.Add(BitmapFrame.Create(rtb));
                 Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                dlg.FileName = selectedFractal != null ? selectedFractal.ToString() : "Fractal";
+                dlg.FileName = selectedFractal != null ? selectedFractal.Name : "Fractal";
                 dlg.DefaultExt = ".png";
                 dlg.Filter = "Pictures |*.png";
                 bool? result = dlg.ShowDialog();

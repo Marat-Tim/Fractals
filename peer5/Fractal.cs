@@ -30,6 +30,12 @@ namespace Fractals
         protected Color startColor;
 
         /// <summary>
+        /// Возвращает название фрактала.
+        /// </summary>
+        /// <returns>Название фрактала.</returns>
+        public abstract string Name { get; }
+
+        /// <summary>
         /// Конечный цвет.
         /// </summary>
         protected Color endColor;

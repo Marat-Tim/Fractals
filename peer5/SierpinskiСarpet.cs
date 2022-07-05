@@ -101,6 +101,6 @@ namespace Fractals
         /// Возвращает название фрактала.
         /// </summary>
         /// <returns>Название фрактала.</returns>
-        public override string ToString() => "Ковер Серпинского";
+        public override string Name => "Ковер Серпинского";
     }
 }

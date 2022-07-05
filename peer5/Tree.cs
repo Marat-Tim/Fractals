@@ -119,6 +119,6 @@ namespace Fractals
         /// Возвращает название фрактала.
         /// </summary>
         /// <returns>Название фрактала.</returns>
-        public override string ToString() => "Обдуваемое ветром фрактальное дерево";
+        public override string Name => "Обдуваемое ветром фрактальное дерево";
     }
 }
