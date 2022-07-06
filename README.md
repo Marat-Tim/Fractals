@@ -1,4 +1,4 @@
-#  fractals
+#  🖼️Fractals
 
 The application is implemented on the WPF platform (my first project on this platform).
 
