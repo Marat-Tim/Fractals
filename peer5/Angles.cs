@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fractals
 {
-    static class Angles
+    static class Angles 
     {
         /// <summary>
         /// Переводит угол из градусов в радианы.
@@ -18,4 +18,4 @@ namespace Fractals
             return angle * Math.PI / 180;
         }
     }
-}
+} 
