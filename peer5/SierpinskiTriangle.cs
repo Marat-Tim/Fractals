@@ -108,10 +108,11 @@ namespace Fractals
             DrawFractal(depthNow + 1);
         }
 
+        public override string ConstID => "SierpinskiTriangle";
+
         /// <summary>
         /// Возвращает название фрактала.
         /// </summary>
-        /// <returns>Название фрактала.</returns>
         public override string Name => "Треугольник Серпинского";
     }
 }

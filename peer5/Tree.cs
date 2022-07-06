@@ -115,10 +115,11 @@ namespace Fractals
             DrawFractal(depthNow + 1);
         }
 
+        public override string ConstID => "Tree";
+
         /// <summary>
         /// Возвращает название фрактала.
         /// </summary>
-        /// <returns>Название фрактала.</returns>
         public override string Name => "Обдуваемое ветром фрактальное дерево";
     }
 }

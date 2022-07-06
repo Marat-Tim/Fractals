@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace Fractals
 {
@@ -20,6 +21,11 @@ namespace Fractals
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Все классы фракталов из проекта.
+        /// </summary>
+        private Type[] allFractalsTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.BaseType == typeof(Fractal)).ToArray();
+
         /// <summary>
         /// Текущий фрактал.
         /// </summary>
@@ -55,63 +61,36 @@ namespace Fractals
         }
 
         /// <summary>
-        /// Смена текущего фрактала на Дерево.
+        /// Добавляет в меню выбора фракталов все фракталы из проекта.
         /// </summary>
-        /// <param name="sender">Объект, пославший событие.</param>
-        /// <param name="e">Пользователь выбрал пункт в меню.</param>
-        private void MenuItemTree_Click(object sender, RoutedEventArgs e)
+        private void MenuInitialization()
         {
-            selectedFractal = new Tree();
-            ChangeSelectedFractal();
-            selectedFractal.DrawFractal();
-        }
-
-        /// <summary>
-        /// Смена текущего фрактала на Кривую Коха.
-        /// </summary>
-        /// <param name="sender">Объект, пославший событие.</param>
-        /// <param name="e">Пользователь выбрал пункт в меню.</param>
-        private void MenuItemKochCurve_Click(object sender, RoutedEventArgs e)
-        {
-            selectedFractal = new KochСurve();
-            ChangeSelectedFractal();
-            selectedFractal.DrawFractal();
-        }
-
-        /// <summary>
-        /// Смена текущего фрактала на Ковер Серпинского.
-        /// </summary>
-        /// <param name="sender">Объект, пославший событие.</param>
-        /// <param name="e">Пользователь выбрал пункт в меню.</param>
-        private void MenuItemSierpinskiCarpet_Click(object sender, RoutedEventArgs e)
-        {
-            selectedFractal = new SierpinskiСarpet();
-            ChangeSelectedFractal();
-            selectedFractal.DrawFractal();
-        }
-
-        /// <summary>
-        /// Смена текущего фрактала на Треугольник Серпинского.
-        /// </summary>
-        /// <param name="sender">Объект, пославший событие.</param>
-        /// <param name="e">Пользователь выбрал пункт в меню.</param>
-        private void MenuItemSierpinskiTriangle_Click(object sender, RoutedEventArgs e)
-        {
-            selectedFractal = new SierpinskiTriangle();
-            ChangeSelectedFractal();
-            selectedFractal.DrawFractal();
-        }
-
-        /// <summary>
-        /// Смена текущего фрактала на Канторово Множество.
-        /// </summary>
-        /// <param name="sender">Объект, пославший событие.</param>
-        /// <param name="e">Пользователь выбрал пункт в меню.</param>
-        private void MenuItemCantorSet_Click(object sender, RoutedEventArgs e)
-        {
-            selectedFractal = new CantorSet();
-            ChangeSelectedFractal();
-            selectedFractal.DrawFractal();
+            Dictionary<string, Type> constIDToType = new();
+            int index = 1;
+            foreach (var fractalType in allFractalsTypes)
+            {
+                var fractal = fractalType.GetConstructors()[0].Invoke(null) as Fractal;
+                if (constIDToType.ContainsKey(fractal.ConstID))
+                {
+                    throw new Exception(
+                        $"Классы {fractalType.Name} и {constIDToType[fractal.ConstID]} " +
+                        $"имеют одинаковое свойство constID");
+                }
+                constIDToType.Add(fractal.ConstID, fractalType);
+                var menuItem = new MenuItem
+                {
+                    Header = $"{index}. {fractal.Name}",
+                    Name = fractal.ConstID
+                };
+                menuItem.Click += (_, _) =>
+                {
+                    selectedFractal = fractalType.GetConstructors()[0].Invoke(null) as Fractal;
+                    ChangeSelectedFractal();
+                    selectedFractal.DrawFractal();
+                };
+                MenuWithFractalSelection.Items.Add(menuItem);
+                index++;
+            }
         }
 
         /// <summary>
@@ -121,9 +100,13 @@ namespace Fractals
         /// <param name="e">Пользователь выбрал пункт в меню.</param>
         private void Canvas0_Loaded(object sender, RoutedEventArgs e)
         {
+            // Чертим рамку, где будут отрисовываться фракталы.
             Painter.DrawRectangle((0, 0),
-                                  (CanvasForDrawing.ActualWidth, CanvasForDrawing.ActualHeight), 
+                                  (CanvasForDrawing.ActualWidth, CanvasForDrawing.ActualHeight),
                                   Colors.White, Colors.Black);
+            // Иницализация меню.
+            MenuInitialization();
+            // Вывод окошка с предупреждением.
             MessageBox.Show("При большой глубине рекурсии приложение будет работать долго.",
                 "Предупреждение");
         }
@@ -180,7 +163,7 @@ namespace Fractals
                 MessageBox.Show(ex.Message, "Ошибка!");
             }
         }
-
+#warning чини
         /// <summary>
         /// Очищает холст для рисования.
         /// Меняет выбранный в меню фрактал.
@@ -192,39 +175,27 @@ namespace Fractals
             Painter.DrawRectangle((0, 0),
                                       (CanvasForDrawing.ActualWidth, CanvasForDrawing.ActualHeight),
                                       Colors.White, Colors.Black);
-            MenuItemTree.IsChecked = false; 
-            MenuItemKochCurve.IsChecked = false;
-            MenuItemSierpinskiCarpet.IsChecked = false;
-            MenuItemSierpinskiTriangle.IsChecked = false;
-            MenuItemCantorSet.IsChecked = false;
-            for (int i = 2; i < 7; i++)
+            foreach (MenuItem menuItem in MenuWithFractalSelection.Items)
             {
-                ((StackPanel)MainGrid.Children[i]).Visibility = Visibility.Hidden;
+                menuItem.IsChecked = false;
             }
-            if (selectedFractal is Tree)
+            foreach (MenuItem menuItem in MenuWithFractalSelection.Items)
             {
-                ((StackPanel)MainGrid.Children[6]).Visibility = Visibility.Visible;
-                MenuItemTree.IsChecked = true;
+                if (menuItem.Name == selectedFractal.ConstID)
+                {
+                    menuItem.IsChecked = true;
+                }
             }
-            if (selectedFractal is KochСurve)
+            foreach (StackPanel stackPanel in GridWithFractalSettings.Children)
             {
-                ((StackPanel)MainGrid.Children[5]).Visibility = Visibility.Visible;
-                MenuItemKochCurve.IsChecked = true;
+                stackPanel.Visibility = Visibility.Hidden;
             }
-            if (selectedFractal is SierpinskiСarpet)
+            foreach (StackPanel fractalSettings in GridWithFractalSettings.Children)
             {
-                ((StackPanel)MainGrid.Children[4]).Visibility = Visibility.Visible;
-                MenuItemSierpinskiCarpet.IsChecked = true;
-            }
-            if (selectedFractal is SierpinskiTriangle)
-            {
-                ((StackPanel)MainGrid.Children[3]).Visibility = Visibility.Visible;
-                MenuItemSierpinskiTriangle.IsChecked = true;
-            }
-            if (selectedFractal is CantorSet)
-            {
-                ((StackPanel)MainGrid.Children[2]).Visibility = Visibility.Visible;
-                MenuItemCantorSet.IsChecked = true;
+                if (fractalSettings.Name == selectedFractal.ConstID)
+                {
+                    fractalSettings.Visibility = Visibility.Visible;
+                }
             }
         }
     }

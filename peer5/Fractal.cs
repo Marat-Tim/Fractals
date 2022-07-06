@@ -13,7 +13,6 @@ namespace Fractals
     /// </summary>
     abstract class Fractal
     {
-
         /// <summary>
         /// Текущее увеличение.
         /// </summary>
@@ -25,15 +24,20 @@ namespace Fractals
         protected Color[] colors = { Colors.Black, Colors.Blue, Colors.Red, Colors.Yellow, Colors.Green, Colors.White };
 
         /// <summary>
+        /// Пользовательское название фрактала.
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
+        /// Идентификационный номер фрактала. 
+        /// Его также нужно указать в свойстве Name в xaml разметке(в StackPanel).
+        /// </summary>
+        public abstract string ConstID { get; }
+
+        /// <summary>
         /// Начальный цвет.
         /// </summary>
         protected Color startColor;
-
-        /// <summary>
-        /// Возвращает название фрактала.
-        /// </summary>
-        /// <returns>Название фрактала.</returns>
-        public abstract string Name { get; }
 
         /// <summary>
         /// Конечный цвет.

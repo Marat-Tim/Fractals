@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fractals
 {
+    /// <summary>
+    /// Класс для работы с углами.
+    /// </summary>
     static class Angles
     {
         /// <summary>

@@ -59,7 +59,7 @@ namespace Fractals
         /// <summary>
         /// Отрисовывает фрактал.
         /// </summary>
-        /// <param name="depthNow">Текцщая глубина рекурсии.</param>
+        /// <param name="depthNow">Текущая глубина рекурсии.</param>
         public override void DrawFractal(int depthNow = 0)
         {
             if (depthNow == 0)
@@ -106,10 +106,11 @@ namespace Fractals
             }
         }
 
+        public override string ConstID => "CantorSet";
+
         /// <summary>
         /// Возвращает название фрактала.
         /// </summary>
-        /// <returns>Название фрактала.</returns>
         public override string Name => "Канторово множество";
     }
 }

@@ -97,10 +97,11 @@ namespace Fractals
             }
         }
 
+        public override string ConstID => "SierpinskiCarpet";
+
         /// <summary>
         /// Возвращает название фрактала.
         /// </summary>
-        /// <returns>Название фрактала.</returns>
         public override string Name => "Ковер Серпинского";
     }
 }

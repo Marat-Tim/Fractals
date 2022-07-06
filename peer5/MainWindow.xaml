@@ -25,164 +25,165 @@
         </Grid.ColumnDefinitions>
         <DockPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
             <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
-                <MenuItem Header="Фрактал">
-                    <MenuItem Name="MenuItemTree" Header="1. Обдуваемое ветром фрактальное дерево" Click="MenuItemTree_Click"/>
-                    <MenuItem Name="MenuItemKochCurve" Header="2. Кривая Коха " Click="MenuItemKochCurve_Click"/>
-                    <MenuItem Name="MenuItemSierpinskiCarpet" Header="3. Ковер Серпинского" Click="MenuItemSierpinskiCarpet_Click"/>
-                    <MenuItem Name="MenuItemSierpinskiTriangle" Header="4. Треугольник Серпинского" Click="MenuItemSierpinskiTriangle_Click"/>
-                    <MenuItem Name="MenuItemCantorSet" Header="5. Множество Кантора" Click="MenuItemCantorSet_Click"/>
-                </MenuItem>
+                <MenuItem Name="MenuWithFractalSelection" Header="Фрактал"/>
                 <MenuItem Header="Сохранить" Click="MenuItemSave_Click"/>
             </Menu>
         </DockPanel>
-        
+
         <Canvas Name="Canvas0" Grid.Column="0" Grid.Row="1" Loaded="Canvas0_Loaded"></Canvas>
-        <!--Канторово множество-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-            <Label Content="Глубина рекурсии"/>
-            <Slider Width="120" Maximum="12"
+
+        <Grid Name="GridWithFractalSettings">
+            <!--Канторово множество-->
+            <StackPanel Name="CantorSet" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                <Label Content="Глубина рекурсии"/>
+                <Slider Width="120" Maximum="12"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Расстояние между отрезками"/>
-            <Slider Name="Slider1" Width="120" Maximum="5"
+                <Label Content="Расстояние между отрезками"/>
+                <Slider Name="Slider1" Width="120" Maximum="5"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Цвета:"></Label>
-            <Label Content="1) Черный        4) Желтый"/>
-            <Label Content="2) Синий           5) Зелёный"/>
-            <Label Content="3) Красный       6) Белый"/>
-            <Label Content="Начальный цвет:"/>
-            <Slider Width="100" Value="0" Minimum="1" Maximum="6"
+                <Label Content="Цвета:"></Label>
+                <Label Content="1) Черный        4) Желтый"/>
+                <Label Content="2) Синий           5) Зелёный"/>
+                <Label Content="3) Красный       6) Белый"/>
+                <Label Content="Начальный цвет:"/>
+                <Slider Width="100" Value="0" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Конечный цвет:"/>
-            <Slider Width="100" Value="0" Minimum="1" Maximum="6"
+                <Label Content="Конечный цвет:"/>
+                <Slider Width="100" Value="0" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Увеличение в"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="5"
+                <Label Content="Увеличение в"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-        </StackPanel>
-        <!--Треугольник Серпинского-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-            <Label Content="Глубина рекурсии"/>
-            <Slider Width="120" Maximum="9"
+            </StackPanel>
+
+            <!--Треугольник Серпинского-->
+            <StackPanel Name="SierpinskiTriangle" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                <Label Content="Глубина рекурсии"/>
+                <Slider Width="120" Maximum="9"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Цвета:"></Label>
-            <Label Content="1) Черный        4) Желтый"/>
-            <Label Content="2) Синий           5) Зелёный"/>
-            <Label Content="3) Красный       6) Белый"/>
-            <Label Content="Начальный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Цвета:"></Label>
+                <Label Content="1) Черный        4) Желтый"/>
+                <Label Content="2) Синий           5) Зелёный"/>
+                <Label Content="3) Красный       6) Белый"/>
+                <Label Content="Начальный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Конечный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Конечный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Увеличение в"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="5"
+                <Label Content="Увеличение в"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-        </StackPanel>
-        <!--Ковер Серпинского-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-            <Label Content="Глубина рекурсии"/>
-            <Slider Width="120" Maximum="6"
+            </StackPanel>
+
+            <!--Ковер Серпинского-->
+            <StackPanel Name="SierpinskiCarpet" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                <Label Content="Глубина рекурсии"/>
+                <Slider Width="120" Maximum="6"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Цвета:"></Label>
-            <Label Content="1) Черный        4) Желтый"/>
-            <Label Content="2) Синий           5) Зелёный"/>
-            <Label Content="3) Красный       6) Белый"/>
-            <Label Content="Начальный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Цвета:"></Label>
+                <Label Content="1) Черный        4) Желтый"/>
+                <Label Content="2) Синий           5) Зелёный"/>
+                <Label Content="3) Красный       6) Белый"/>
+                <Label Content="Начальный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Конечный цвет:"/>
-            <Slider Width="100" Value="6" Minimum="1" Maximum="6"
+                <Label Content="Конечный цвет:"/>
+                <Slider Width="100" Value="6" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Увеличение в"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="5"
+                <Label Content="Увеличение в"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-        </StackPanel>
-        <!--Прямая коха-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-            <Label Content="Глубина рекурсии"/>
-            <Slider Width="120" Maximum="7"
+            </StackPanel>
+
+            <!--Прямая коха-->
+            <StackPanel Name="KochСurve" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                <Label Content="Глубина рекурсии"/>
+                <Slider Width="120" Maximum="7"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Цвета:"></Label>
-            <Label Content="1) Черный        4) Желтый"/>
-            <Label Content="2) Синий           5) Зелёный"/>
-            <Label Content="3) Красный       6) Белый"/>
-            <Label Content="Начальный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Цвета:"></Label>
+                <Label Content="1) Черный        4) Желтый"/>
+                <Label Content="2) Синий           5) Зелёный"/>
+                <Label Content="3) Красный       6) Белый"/>
+                <Label Content="Начальный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Конечный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Конечный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Увеличение в"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="5"
+                <Label Content="Увеличение в"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-        </StackPanel>
-        <!--Дерево-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Visibility="Hidden">
-            <Label Content="Глубина рекурсии"/>
-            <Slider Width="120" Maximum="13"
+            </StackPanel>
+
+            <!--Дерево-->
+            <StackPanel Name="Tree" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                <Label Content="Глубина рекурсии"/>
+                <Slider Width="120" Maximum="13"
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Отношение новой ветки к старой"/>
-            <Label Content="от 0.1 до 0.75"/>
-            <Slider Width="120" Value="0.75" Minimum="0.1" Maximum="0.75" ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Угол между левой веткой и горизонтальной осью"/>
-            <Slider Width="120" Value="45" Maximum="90"
+                <Label Content="Отношение новой ветки к старой"/>
+                <Label Content="от 0.1 до 0.75"/>
+                <Slider Width="120" Value="0.75" Minimum="0.1" Maximum="0.75" ValueChanged="DrawSelectedFractal"/>
+                <Label Content="Угол между левой веткой и горизонтальной осью"/>
+                <Slider Width="120" Value="45" Maximum="90"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Угол между правой веткой и горизонтальной осью"/>
-            <Slider Width="120" Value="45" Maximum="90"
+                <Label Content="Угол между правой веткой и горизонтальной осью"/>
+                <Slider Width="120" Value="45" Maximum="90"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Цвета:"></Label>
-            <Label Content="1) Черный        4) Желтый"/>
-            <Label Content="2) Синий           5) Зелёный"/>
-            <Label Content="3) Красный       6) Белый"/>
-            <Label Content="Начальный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Цвета:"></Label>
+                <Label Content="1) Черный        4) Желтый"/>
+                <Label Content="2) Синий           5) Зелёный"/>
+                <Label Content="3) Красный       6) Белый"/>
+                <Label Content="Начальный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Конечный цвет:"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="6"
+                <Label Content="Конечный цвет:"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
                     IsSnapToTickEnabled="True"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-            <Label Content="Увеличение в"/>
-            <Slider Width="100" Value="1" Minimum="1" Maximum="5"
+                <Label Content="Увеличение в"/>
+                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-        </StackPanel>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>

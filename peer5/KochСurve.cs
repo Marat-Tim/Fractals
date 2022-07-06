@@ -110,10 +110,11 @@ namespace Fractals
             DrawFractal(depthNow + 1);
         }
 
+        public override string ConstID => "KochСurve";
+
         /// <summary>
         /// Возвращает название фрактала.
         /// </summary>
-        /// <returns>Название фрактала.</returns>
         public override string Name => "Прямая коха";
     }
 }
