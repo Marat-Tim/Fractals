@@ -9,7 +9,7 @@ namespace Fractals
     /// <summary>
     /// Класс для работы с углами.
     /// </summary>
-    static class Angles
+    static class Angles 
     {
         /// <summary>
         /// Переводит угол из градусов в радианы.
