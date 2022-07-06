@@ -24,7 +24,8 @@ namespace Fractals
         /// <summary>
         /// Все классы фракталов из проекта.
         /// </summary>
-        private Type[] allFractalsTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.BaseType == typeof(Fractal)).ToArray();
+        private Type[] allFractalsTypes =
+            Assembly.GetExecutingAssembly().GetTypes().Where(x => x.BaseType == typeof(Fractal)).ToArray();
 
         /// <summary>
         /// Текущий фрактал.
@@ -37,17 +38,10 @@ namespace Fractals
         public static Canvas CanvasForDrawing { get; set; }
 
         /// <summary>
-        /// Место на котором расположены:
-        /// 1. Холст для рисования;
-        /// 2. Параметры фракталов;
-        /// 3. Элементы меню.
+        /// Панель настройки текущего фрактала.
         /// </summary>
-        public static Grid MainGrid { get; set; }
-
-        /// <summary>
-        /// Основное окно.
-        /// </summary>
-        public static Window MyWindow { get; set; }
+        public static StackPanel PanelWithFractalSettings => panelWithFractalSettings;
+        private static StackPanel panelWithFractalSettings;
 
         /// <summary>
         /// Конструктор.
@@ -56,8 +50,6 @@ namespace Fractals
         {
             InitializeComponent();
             CanvasForDrawing = Canvas0;
-            MainGrid = Grid0;
-            MyWindow = Window0;
         }
 
         /// <summary>
@@ -73,8 +65,8 @@ namespace Fractals
                 if (constIDToType.ContainsKey(fractal.ConstID))
                 {
                     throw new Exception(
-                        $"Классы {fractalType.Name} и {constIDToType[fractal.ConstID]} " +
-                        $"имеют одинаковое свойство constID");
+                        $"Классы {fractalType.Name} и {constIDToType[fractal.ConstID].Name} " +
+                        $"имеют одинаковое значение в свойстве constID");
                 }
                 constIDToType.Add(fractal.ConstID, fractalType);
                 var menuItem = new MenuItem
@@ -163,7 +155,7 @@ namespace Fractals
                 MessageBox.Show(ex.Message, "Ошибка!");
             }
         }
-#warning чини
+
         /// <summary>
         /// Очищает холст для рисования.
         /// Меняет выбранный в меню фрактал.
@@ -195,6 +187,7 @@ namespace Fractals
                 if (fractalSettings.Name == selectedFractal.ConstID)
                 {
                     fractalSettings.Visibility = Visibility.Visible;
+                    panelWithFractalSettings = fractalSettings;
                 }
             }
         }

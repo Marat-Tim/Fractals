@@ -32,9 +32,9 @@
 
         <Canvas Name="Canvas0" Grid.Column="0" Grid.Row="1" Loaded="Canvas0_Loaded"></Canvas>
 
-        <Grid Name="GridWithFractalSettings">
+        <Grid Name="GridWithFractalSettings" Grid.Column="1" Grid.Row="1">
             <!--Канторово множество-->
-            <StackPanel Name="CantorSet" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="CantorSet" Visibility="Hidden">
                 <Label Content="Глубина рекурсии"/>
                 <Slider Width="120" Maximum="12"
                     AutoToolTipPlacement="BottomRight"  
@@ -66,7 +66,7 @@
             </StackPanel>
 
             <!--Треугольник Серпинского-->
-            <StackPanel Name="SierpinskiTriangle" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="SierpinskiTriangle" Visibility="Hidden">
                 <Label Content="Глубина рекурсии"/>
                 <Slider Width="120" Maximum="9"
                     AutoToolTipPlacement="BottomRight"  
@@ -93,7 +93,7 @@
             </StackPanel>
 
             <!--Ковер Серпинского-->
-            <StackPanel Name="SierpinskiCarpet" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="SierpinskiCarpet" Visibility="Hidden">
                 <Label Content="Глубина рекурсии"/>
                 <Slider Width="120" Maximum="6"
                     AutoToolTipPlacement="BottomRight"  
@@ -120,7 +120,7 @@
             </StackPanel>
 
             <!--Прямая коха-->
-            <StackPanel Name="KochСurve" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="KochСurve" Visibility="Hidden">
                 <Label Content="Глубина рекурсии"/>
                 <Slider Width="120" Maximum="7"
                     AutoToolTipPlacement="BottomRight"  
@@ -147,7 +147,7 @@
             </StackPanel>
 
             <!--Дерево-->
-            <StackPanel Name="Tree" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="Tree" Visibility="Hidden">
                 <Label Content="Глубина рекурсии"/>
                 <Slider Width="120" Maximum="13"
                     AutoToolTipPlacement="BottomRight"  

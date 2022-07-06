@@ -46,11 +46,11 @@ namespace Fractals
         /// </summary>
         private void GetParameters()
         {
-            depth = (int)((Slider)((StackPanel)MainWindow.MainGrid.Children[5]).Children[1]).Value;
-            startColor = colors[(int)((Slider)((StackPanel)MainWindow.MainGrid.Children[5]).Children[7]).Value - 1];
-            endColor = colors[(int)((Slider)((StackPanel)MainWindow.MainGrid.Children[5]).Children[9]).Value - 1];
+            depth = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[1]).Value;
+            startColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[7]).Value - 1];
+            endColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[9]).Value - 1];
             actualColor = startColor;
-            actualIncrease = (int)((Slider)((StackPanel)MainWindow.MainGrid.Children[5]).Children[11]).Value;
+            actualIncrease = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[11]).Value;
         }
 
         /// <summary>
