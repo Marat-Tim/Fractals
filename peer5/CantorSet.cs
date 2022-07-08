@@ -47,11 +47,13 @@ namespace Fractals
         /// </summary>
         private void GetParameters()
         {
-            depth = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[1]).Value;
-            actualIncrease = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[13]).Value;
-            distance = ((Slider)(MainWindow.PanelWithFractalSettings).Children[3]).Value * actualIncrease;
-            startColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[9]).Value - 1];
-            endColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[11]).Value - 1];
+            depth = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[1]).Value;
+            actualIncrease = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[9]).Value;
+            distance = ((Slider)MainWindow.PanelWithFractalSettings.Children[3]).Value * actualIncrease;
+            startColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[5]).SelectedColor
+                ?? Colors.Black;
+            endColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[7]).SelectedColor
+                ?? Colors.Black;
             actualColor = startColor;
         }
 

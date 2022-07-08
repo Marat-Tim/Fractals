@@ -99,7 +99,7 @@ namespace Fractals
             // Иницализация меню.
             MenuInitialization();
             // Вывод окошка с предупреждением.
-            MessageBox.Show("При большой глубине рекурсии приложение будет работать долго.",
+            System.Windows.MessageBox.Show("При большой глубине рекурсии приложение будет работать долго.",
                 "Предупреждение");
         }
 
@@ -152,7 +152,7 @@ namespace Fractals
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка!");
+                System.Windows.MessageBox.Show(ex.Message, "Ошибка!");
             }
         }
 
@@ -190,6 +190,11 @@ namespace Fractals
                     panelWithFractalSettings = fractalSettings;
                 }
             }
+        }
+
+        private void palette2_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+
         }
     }
 }

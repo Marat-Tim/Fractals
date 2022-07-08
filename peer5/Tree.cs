@@ -65,14 +65,16 @@ namespace Fractals
         /// </summary>
         private void GetParameters()
         {
-            depth = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[1]).Value;
-            ratio = ((Slider)(MainWindow.PanelWithFractalSettings).Children[4]).Value;
-            angle1 = ((Slider)(MainWindow.PanelWithFractalSettings).Children[6]).Value;
-            angle2 = ((Slider)(MainWindow.PanelWithFractalSettings).Children[8]).Value;
-            startColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[14]).Value - 1];
-            endColor = colors[(int)((Slider)(MainWindow.PanelWithFractalSettings).Children[16]).Value - 1];
+            depth = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[1]).Value;
+            ratio = ((Slider)MainWindow.PanelWithFractalSettings.Children[4]).Value;
+            angle1 = ((Slider)MainWindow.PanelWithFractalSettings.Children[6]).Value;
+            angle2 = ((Slider)MainWindow.PanelWithFractalSettings.Children[8]).Value;
+            startColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[10]).SelectedColor
+                ?? Colors.Black;
+            endColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[12]).SelectedColor
+                ?? Colors.Black;
             actualColor = startColor;
-            actualIncrease = (int)((Slider)(MainWindow.PanelWithFractalSettings).Children[18]).Value;
+            actualIncrease = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[14]).Value;
         }
 
         /// <summary>

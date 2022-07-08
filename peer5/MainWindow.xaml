@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Fractals"
         mc:Ignorable="d"
         Name="Window0"
@@ -45,20 +46,12 @@
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-                <Label Content="Цвета:"></Label>
-                <Label Content="1) Черный        4) Желтый"/>
-                <Label Content="2) Синий           5) Зелёный"/>
-                <Label Content="3) Красный       6) Белый"/>
                 <Label Content="Начальный цвет:"/>
-                <Slider Width="100" Value="0" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <Slider Width="100" Value="0" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
                 <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
@@ -72,20 +65,12 @@
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-                <Label Content="Цвета:"></Label>
-                <Label Content="1) Черный        4) Желтый"/>
-                <Label Content="2) Синий           5) Зелёный"/>
-                <Label Content="3) Красный       6) Белый"/>
                 <Label Content="Начальный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
                 <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
@@ -99,20 +84,12 @@
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-                <Label Content="Цвета:"></Label>
-                <Label Content="1) Черный        4) Желтый"/>
-                <Label Content="2) Синий           5) Зелёный"/>
-                <Label Content="3) Красный       6) Белый"/>
                 <Label Content="Начальный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <Slider Width="100" Value="6" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="White"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
                 <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
@@ -126,20 +103,12 @@
                     AutoToolTipPlacement="BottomRight"  
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
-                <Label Content="Цвета:"></Label>
-                <Label Content="1) Черный        4) Желтый"/>
-                <Label Content="2) Синий           5) Зелёный"/>
-                <Label Content="3) Красный       6) Белый"/>
                 <Label Content="Начальный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
                 <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
@@ -164,20 +133,12 @@
                 <Slider Width="120" Value="45" Maximum="90"
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
-                <Label Content="Цвета:"></Label>
-                <Label Content="1) Черный        4) Желтый"/>
-                <Label Content="2) Синий           5) Зелёный"/>
-                <Label Content="3) Красный       6) Белый"/>
                 <Label Content="Начальный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="6"
-                    IsSnapToTickEnabled="True"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                    DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
                 <Slider Width="100" Value="1" Minimum="1" Maximum="5"
                     AutoToolTipPlacement="BottomRight"
