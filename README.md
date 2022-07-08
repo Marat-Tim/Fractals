@@ -7,7 +7,7 @@ This app can draw 5 fractals:
 * Koch curve
 * Serpinsky Carpet
 * Sierpinski Triangle
-* Set of cantors
+* Cantor set
 
 Each fractal can be slightly changed using settings (you can change the recursion depth, zoom in/out, change the start/end color, you can change the angle of the branches of the Pythagorean tree, and so on) 
 
