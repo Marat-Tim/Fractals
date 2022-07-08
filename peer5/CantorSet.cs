@@ -48,7 +48,7 @@ namespace Fractals
         private void GetParameters()
         {
             depth = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[1]).Value;
-            actualIncrease = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[9]).Value;
+            actualIncrease = ((Slider)MainWindow.PanelWithFractalSettings.Children[9]).Value / 100;
             distance = ((Slider)MainWindow.PanelWithFractalSettings.Children[3]).Value * actualIncrease;
             startColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[5]).SelectedColor
                 ?? Colors.Black;

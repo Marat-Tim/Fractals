@@ -74,7 +74,7 @@ namespace Fractals
             endColor = ((Xceed.Wpf.Toolkit.ColorPicker)MainWindow.PanelWithFractalSettings.Children[12]).SelectedColor
                 ?? Colors.Black;
             actualColor = startColor;
-            actualIncrease = (int)((Slider)MainWindow.PanelWithFractalSettings.Children[14]).Value;
+            actualIncrease = ((Slider)MainWindow.PanelWithFractalSettings.Children[14]).Value / 100;
         }
 
         /// <summary>

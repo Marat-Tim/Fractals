@@ -16,12 +16,7 @@ namespace Fractals
         /// <summary>
         /// Текущее увеличение.
         /// </summary>
-        protected int actualIncrease;
-
-        /// <summary>
-        /// Цвета, которые может выбрать пользователь.
-        /// </summary>
-        protected Color[] colors = { Colors.Black, Colors.Blue, Colors.Red, Colors.Yellow, Colors.Green, Colors.White };
+        protected double actualIncrease;
 
         /// <summary>
         /// Пользовательское название фрактала.
@@ -72,9 +67,9 @@ namespace Fractals
         {
             if (depth != 0)
             {
-                byte actualR = (byte)(actualColor.R + (endColor.R - startColor.R) / (depth));
-                byte actualG = (byte)(actualColor.G + (endColor.G - startColor.G) / (depth));
-                byte actualB = (byte)(actualColor.B + (endColor.B - startColor.B) / (depth));
+                byte actualR = (byte)(actualColor.R + (endColor.R - startColor.R) / depth);
+                byte actualG = (byte)(actualColor.G + (endColor.G - startColor.G) / depth);
+                byte actualB = (byte)(actualColor.B + (endColor.B - startColor.B) / depth);
                 actualColor = Color.FromRgb(actualR, actualG, actualB);
             }
             else

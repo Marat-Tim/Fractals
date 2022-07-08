@@ -14,7 +14,7 @@
         Width="800" 
         ResizeMode="CanResize" 
         SizeChanged="DrawSelectedFractal" 
-        Icon="/Фрактальный кот.png">
+        Icon="/Fractal-cat.png">
     <Grid Name="Grid0">
         <Grid.RowDefinitions>
             <RowDefinition Height="18"></RowDefinition>
@@ -47,15 +47,13 @@
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
                 <Label Content="Начальный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <Slider Width="100" Value="500" Minimum="100" Maximum="500" ValueChanged="DrawSelectedFractal"/>
             </StackPanel>
 
             <!--Треугольник Серпинского-->
@@ -66,15 +64,13 @@
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
                 <Label Content="Начальный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <Slider Width="100" Value="500" Minimum="100" Maximum="500" ValueChanged="DrawSelectedFractal"/>
             </StackPanel>
 
             <!--Ковер Серпинского-->
@@ -85,15 +81,13 @@
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
                 <Label Content="Начальный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="White"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="White"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <Slider Width="100" Value="500" Minimum="100" Maximum="500" ValueChanged="DrawSelectedFractal"/>
             </StackPanel>
 
             <!--Прямая коха-->
@@ -104,15 +98,13 @@
                     IsSnapToTickEnabled="True"
                     ValueChanged="DrawSelectedFractal"/>
                 <Label Content="Начальный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <Slider Width="100" Value="500" Minimum="100" Maximum="500" ValueChanged="DrawSelectedFractal"/>
             </StackPanel>
 
             <!--Дерево-->
@@ -134,15 +126,13 @@
                     AutoToolTipPlacement="BottomRight"
                     ValueChanged="DrawSelectedFractal"/>
                 <Label Content="Начальный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Конечный цвет:"/>
-                <xctk:ColorPicker SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
+                <xctk:ColorPicker Margin="100,0,100,0" SelectedColorChanged = "DrawSelectedFractal" SelectedColor="Black"
                     DisplayColorAndName="True" AvailableColorsSortingMode="HueSaturationBrightness"></xctk:ColorPicker>
                 <Label Content="Увеличение в"/>
-                <Slider Width="100" Value="1" Minimum="1" Maximum="5"
-                    AutoToolTipPlacement="BottomRight"
-                    ValueChanged="DrawSelectedFractal"/>
+                <Slider Width="100" Value="500" Minimum="100" Maximum="500" ValueChanged="DrawSelectedFractal"/>
             </StackPanel>
         </Grid>
 

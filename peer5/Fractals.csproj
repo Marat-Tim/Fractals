@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Фрактальный кот.png" />
+    <None Remove="Fractal-cat.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Фрактальный кот.png" />
+    <Resource Include="Fractal-cat.png" />
   </ItemGroup>
 
 </Project>
